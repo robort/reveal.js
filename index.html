@@ -1,52 +1,335 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
-
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>reveal.js - The HTML Presentations Framework</title>
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/main.css">
+		<title>Velocity -- Infrastructure and Performance</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
 
 		<!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-
 	</head>
+
 	<body>
-		<div class="wrapper">
 
-			<header>
+		<div class="reveal">
 
-				<h1>reveal.js</h1>
-				<p>
-					The HTML Presentation Framework &mdash; Site coming soon
-				</p>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Infrastructure & Performance</h1>
+                    <br>
+					<h4>
+						<a href="http://velocity.oreilly.com.cn/2015/index.php?func=slidesvideos"><-- Velocity 2015 --></a>
+					</h4>
+					<br>
+					<p>
+						<small>Presented by <a href="https://github.microstrategy.com/pyan">Robert Yan</a> </small>
+						<br>
+						<small>Created with <a href="https://github.com/hakimel/reveal.js">reveal.js</a> </small>
+					</p>
+				</section>
 
-			</header>
+				<section>
+					<h2>Agnda</h2>
+					<ol>
+						<li>Framework & Performance</li>
+						<li>Docker-Based Development Infrastructure</li>
+						<li>Intelligent Monitoring</li>
+					</ol>
+				</section>
 
-			<footer>
+                <!-- 1st session -->
+				<section>
+					<section>
+						<h2>Framework & Performance</h2>
+                        <br>
+						<p>Lingyan Zhu</p>
+                        <img width="30%" data-src="http://www.ccn.com.cn/uploads/allimg/130807/155H92J1-0.png" alt="Yahoo!">
+                        <br>
+                        <a href="http://velocity.oreilly.com.cn/2015/index.php?func=session&id=12">slides</a>
+					</section>
+					<section>
+						<h2>Frameworks -- Big Bang</h2>
+						<img src="img/1-framework-big-bang.png" alt="big bang"/>
+						<br>
+					</section>
+					<section>
+						<h2>Frameworks -- Big Bang</h2>
+						<br>
+						<img src="img/1-node.js.png" alt="Node.js"/>
+						<br>
+					</section>
+					<section>
+						<h2>Choose a Framework?</h2>
+						<p><em>- What's important to you and your developers?</em></p>
+						<br>
+					</section>
+					<section>
+						<h2>What are my application’s main use cases? </h2>
+						<ul>
+							<li>How much data?</li>
+							<li>Are there lot of interactions?</li>
+							<li>Do I need client navigation?</li>
+							<li>And so on...</li>
+						</ul>
+						<br>
+					</section>
+					<section>
+						<img src="img/1-easy-to-learn.png" alt="Easy to Learn" />
+					</section>
+					<section>
+						<img src="img/1-easy-to-debug.png" alt="Easy to Debug" />
+					</section>
+					<section>
+						<img src="img/1-how-active.png" alt="How Active" />
+					</section>
+					<section>
+						<img src="img/1-stability.png" alt="Stability" />
+					</section>
+					<section>
+						<img src="img/1-performant.png" alt="Performant" />
+					</section>
+					<section>
+						<h2>Yahoo! Front Page's Story</h2>
+					</section>
+					<section>
+						<img src="img/1-Yahoo.png" alt="Yahoo" />
+					</section>
+					<section>
+						<img src="img/1-evolution.png" alt="Evolution" />
+					</section>
+					<section>
+						<h2>We're Here</h2>
+						<img src="img/1-react-and-fluxible.png" alt="React and Universal Flux" />
+						<a class="fragment" href="http://velocity.oreilly.com.cn/2015/index.php?func=session&id=13">Another talk about React + Flux</a>
+					</section>
+					<section>
+						<img src="img/1-developer-productivity.png" alt="Developer Productivity" />
+					</section>
+					<section>
+						<img src="img/1-build-and-deploy.png" alt="Build and Deploy" />
+					</section>
+					<section>
+						<img src="img/1-internal-open-source.png" alt="Internal Open Source" />
+					</section>
+					<section>
+						<img src="img/1-ttfb.png" alt="TTFB" />
+					</section>
+					<section>
+						<h2>What's Next?</h2>
+						<img src="img/1-evolution-next.png" alt="Evolution Next" />
+					</section>
+					<section>
+						<p><em>The best way to predict the future is to invent it</em></p>
+						<p>
+							<small> -- Alan Kay in 1971, inventor of Smalltalk</small>
+						</p>
+					</section>
+					<section>
+						<p>We can't predict the future, inventing the future is not that easy...
+							<span class="fragment">Can we <b><em>prepare</em></b> for it? </span>
+						</p>
+					</section>
+					<section>
+						<img src="img/1-simplicity.png" alt="Simplicity" />
+					</section>
+					<section>
+						<img src="img/1-not-dogmatic.png" alt="Dont's be Dogmatic" />
+					</section>
+					<section>
+						<img src="img/1-open-source.png" alt="Embrace Open Source" />
+					</section>
+				</section>
 
-				<p>
-					<a href="http://lab.hakim.se/reveal-js">Try the demo</a>
-					<a href="https://github.com/hakimel/reveal.js/releases">Download</a>
-				</p>
+                <section>
+                    <section data-background-color="white">
+                        <h2>Docker-Based Development Infrastructure</h2>
+                        <br>
+                        <p>Sun Yucong</p>
+                        <a href="http://coding.net">
+                            <img  width="30%" data-src="https://coding.net/static/5ee8025c9dc63a6ff53153705d0e7ce8.png" alt="coding.net">
+                        </a>
+                        <br>
+                        <a href="http://velocity.oreilly.com.cn/2015/index.php?func=session&id=11">slides</a>
+                    </section>
 
-			</footer>
+                    <section>
+                        <img data-src="http://cdn.infoqstatic.com/statics_s1_20150916-0148/resource/articles/docker-core-technology-preview/zh/resources/0731010.png" alt="docker" >
+                    </section>
+
+                    <section>
+                        <h2>Container Technology</h2>
+                        <img width="130%" src="img/2-container.jpg" alt="container">
+                        <br>
+                    </section>
+
+                    <section>
+                        <h2>Why Docker</h2>
+                        <ul>
+                            <li>Self-Sufficient packaging</li>
+                            <li>Universal API between Host / App</li>
+                            <li>Foundation for common infrastructure</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Micro-services + Docker</h2>
+                    </section>
+
+                    <section>
+                        <img width="120%" src="img/2-new-ops-infra.png" alt="New Ope Infra" >
+                    </section>
+
+                    <section>
+                        <h2>Micro-services + Docker</h2>
+                        <ul>
+                            <li>System Scalability and Developer Productivity</li>
+                            <li>Refactor and componentize server</li>
+                            <li>Build the development infrastructure</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Challenge of Using Docker in The Architecture</h2>
+                        <ul>
+                            <li>Resource Management</li>
+                            <li>Deal with large, complex micro services graph</li>
+                            <li>Service Discovery / Load Balancing</li>
+                            <li>Common Infrastructure</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Mesos + Marathon</h2>
+                        <ul>
+                            <li>Distributed</li>
+                            <li>Failover</li>
+                            <li>Service Discovery</li>
+                            <li>Load Balancing</li>
+                            <li>Resource Management</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Containerize</h2>
+                        <ul>
+                            <li>Boxing App/Service</li>
+                            <li>Moving Boxes</li>
+                            <li>More Redundant Boxes</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <img data-src="img/2-box.png" alt="box">
+                    </section>
+
+                    <section>
+                        <h2>Docker On Cloud</h2>
+                        <ul>
+                            <li>Development Infrastructure on Private Cloud</li>
+                            <li>Deployment (e.g. Secure Cloud) on Public Cloud (AWS)</li>
+                            <li>Consistent Environment for Dev/Test/Prod</li>
+                            <li>Dev, Test, Build, Deployment, Monitoring in Docker Cluster</li>
+                            <li>Continuous Integration -> Deployment -> Operation</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Container as a Service</h2>
+                    </section>
+
+                    <section>
+                        <img src="img/2-DevOps.png" alt="DevOps" >
+                    </section>
+
+
+                    <section>
+                        <img src="img/2-Infra-Monitoring.png" alt="Monitoring Infra" >
+                    </section>
+
+                    <section>
+                        <img src="img/2-infra-log-analysis.png" alt="Log Analysis Infra" >
+                    </section>
+
+
+
+                </section>
+
+				<section data-background-color="silver">
+					<section>
+						<h2>Intelligent Monitoring</h2>
+						<br>
+						<p>Qu Xianping</p>
+						<img width="30%" data-src="https://www.baidu.com/img/bd_logo1.png" alt="Baidu">
+						<br>
+						<a href="http://velocity.oreilly.com.cn/2015/index.php?func=session&id=20">slides</a>
+					</section>
+				</section>
+
+				<section>
+					<h1 style="color:green">Faster</h1>
+				</section>
+
+                <section>
+                    <h1>Build the Best Infrastructure on Earth</h1>
+                </section>
+
+			</div>
 
 		</div>
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
-		  ga('create', 'UA-43375306-1', 'revealjs.com');
-		  ga('send', 'pageview');
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
 		</script>
+
 	</body>
 </html>
